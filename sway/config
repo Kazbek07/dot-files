@@ -1,0 +1,45 @@
+# Begs' config for sway
+#
+# Copy this and all subfiles to ~/.config/sway/config and ~/.config/sway/config.d/ and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+# Run pure wayland session
+xwayland disable
+
+include @sysconfdir@/sway/config.d/*
+include ~/.config/sway/config.d/*
+
+## Specific window
+for_window [app_id="nitrogen|engrampa|qt5ct"] floating enable, resize set 600 500, move position center
+for_window [app_id="pavucontrol|transmission"] floating enable
+for_window [app_id="mpv"] floating enable, resize set 350 230, sticky enable, move window to position 1000 0
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="dialog"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [app_id="floating"] floating enable
+for_window [app_id="imv"] floating enable
+#for_window [title = "About Mozilla Firefox"] floating enable
+#for_window [title = "Firefox - Sharing Indicator"] kill
+#for_window [title = "Firefox — Sharing Indicator"] kill
+#for_window [title = "^Open File$"] floating enable
+#for_window [class = "^zoom$"] floating enable
+#for_window [window_role = "GtkFileChooserDialog"] resize set 590 340
+#for_window [window_role = "GtkFiileChooserDialog"] move position center
+#for_window [title=".*"] title_format %title゜
+
+# drawing a terminal
+assign [app_id="foot"] 1
+
+assign [app_id="subl"] 2
+
+# telegram
+assign [app_id="telegram"] 3
+
+# firefox
+for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, sticky enable, border none
+assign [app_id="firefox"] 4
+
+
+
